@@ -19,7 +19,7 @@ RUN mkdir -p /usr/share/man/man1 \
     && docker-php-ext-enable smbclient \
     && mkdir /var/log/supervisord /var/run/supervisord
 
-COPY supervisord.conf /etc/supervisor/supervisord.conf
+RUN wget http://raw.githubusercontent.com/nextcloud/docker/master/.examples/dockerfiles/full/apache/supervisord.conf -P /etc/supervisor
 
 ENV NEXTCLOUD_UPDATE=1
 
