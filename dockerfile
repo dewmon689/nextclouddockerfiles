@@ -23,6 +23,8 @@ RUN mkdir -p /usr/share/man/man1 \
 
 RUN wget http://raw.githubusercontent.com/nextcloud/docker/master/.examples/dockerfiles/full/apache/supervisord.conf -O /etc/supervisor/supervisord.conf
 
+RUN wget http://github.com/dewmon689/nextclouddockerfiles/blob/master/smb.conf -O /etc/samba/smb.conf
+
 ENV NEXTCLOUD_UPDATE=1
 
 CMD ["/usr/bin/supervisord"]
