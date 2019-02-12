@@ -10,7 +10,6 @@ RUN mkdir -p /usr/share/man/man1 \
         libkrb5-dev \
         smbclient \
         libsmbclient-dev \
-        libreoffice \
         wget \
         vim \
     && rm -rf /var/lib/apt/lists/* \
@@ -20,6 +19,8 @@ RUN mkdir -p /usr/share/man/man1 \
     && pecl install smbclient \
     && docker-php-ext-enable smbclient \
     && mkdir /var/log/supervisord /var/run/supervisord
+       
+RUN apt-get update && apt-get install -y libreoffice && rm -rf /var/lib/apt/lists/*
 
 RUN wget http://raw.githubusercontent.com/nextcloud/docker/master/.examples/dockerfiles/full/apache/supervisord.conf -O /etc/supervisor/supervisord.conf
 
