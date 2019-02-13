@@ -14,7 +14,7 @@ services:
       - MYSQL_USER=nextcloud
 
   app:
-    image: nextcloud:apachefull
+    image: dewmon689/nextcloud:latest
     ports:
       - 8080:80
       - 443:443
