@@ -24,9 +24,9 @@ RUN apt-get update && apt-get install -y vim && rm -rf /var/lib/apt/lists/*
       
 RUN apt-get update && apt-get install -y libreoffice && rm -rf /var/lib/apt/lists/*
 
-RUN wget http://raw.githubusercontent.com/nextcloud/docker/master/.examples/dockerfiles/full/apache/supervisord.conf -O /etc/supervisor/supervisord.conf
+COPY supervisord.conf /etc/supervisor/supervisord.conf
 
-RUN wget http://github.com/dewmon689/nextclouddockerfiles/blob/master/smb.conf -O /etc/samba/smb.conf
+COPY smb.conf /etc/samba/smb.conf
 
 ENV NEXTCLOUD_UPDATE=1
 
