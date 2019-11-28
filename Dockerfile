@@ -46,11 +46,11 @@ RUN set -ex; \
     apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
     rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update && apt-get install -y wget && rm -rf /var/lib/apt/lists/*
+#RUN apt-get update && apt-get install -y wget && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update && apt-get install -y vim && rm -rf /var/lib/apt/lists/*
+#RUN apt-get update && apt-get install -y vim && rm -rf /var/lib/apt/lists/*
       
-RUN apt-get update && apt-get install -y libreoffice && rm -rf /var/lib/apt/lists/*
+#RUN apt-get update && apt-get install -y libreoffice && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p \
     /var/log/supervisord \
