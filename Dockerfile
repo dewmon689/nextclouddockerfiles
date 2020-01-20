@@ -11,6 +11,16 @@ RUN set -ex; \
         supervisor \
       ; \
     rm -rf /var/lib/apt/lists/*
+    
+RUN set -ex; \
+    \
+    apt-get update; \
+    apt-get install -y --no-install-recommends \
+        wget \
+        vim \
+        libreoffice \
+      ; \
+    rm -rf /var/lib/apt/lists/*
 
 RUN set -ex; \
     \
@@ -44,17 +54,7 @@ RUN set -ex; \
         | xargs -rt apt-mark manual; \
     \
     apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
-    rm -rf /var/lib/apt/lists/*
-    
-RUN set -ex; \
-    \
-    apt-get update; \
-    apt-get install -y --no-install-recommends \
-        wget \
-        vim \
-        libreoffice \
-      ; \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/*  
 
 RUN mkdir -p \
     /var/log/supervisord \
