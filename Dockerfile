@@ -63,8 +63,6 @@ RUN mkdir -p \
 
 COPY supervisord.conf /etc/supervisor/supervisord.conf
 
-COPY smb.conf /etc/samba/smb.conf
-
 ENV NEXTCLOUD_UPDATE=1
 
 CMD ["/usr/bin/supervisord"]
